@@ -1,4 +1,6 @@
 import { useTodo } from "../context/useTodo";
+import TodoItem from "./TodoItem";
+
 const TodoList = () => {
   const { todos } = useTodo();
 
@@ -14,7 +16,7 @@ const TodoList = () => {
   return (
     <ul className="grid max-w-lg gap-2 px-5 m-auto">
       {todos.map((todo) => (
-        <li key={todo.id}>{todo.text}</li>
+        <TodoItem key={todo.id} todo={todo} />
       ))}
     </ul>
   );
